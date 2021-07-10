@@ -13,7 +13,7 @@ def drop_args(target, *args, **kwargs):
 
 
 _Ui, _UiBase = uic.loadUiType(
-    pathlib.Path(__file__).with_name('mainWindow.ui')
+    pathlib.Path(__file__).with_name('mainWindow.ui'), resource_suffix='', import_from="ui"
 )
 
 
@@ -41,7 +41,7 @@ class MainWindow(_UiBase):
 
     def __compare(self):
         if self.ui.widget_left.isLoaded() and self.ui.widget_right.isLoaded():
-            if self.ui.widget_left.ast != self.ui.widget_right.ast:
+            if self.ui.widget_left.data != self.ui.widget_right.data:
                 self.ui.widget_left.setPlagiarized(False)
                 self.ui.widget_right.setPlagiarized(False)
             else:

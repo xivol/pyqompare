@@ -1,4 +1,3 @@
-
 # https://github.com/altendky/basicpyqt5example
 
 # See file COPYING in this source tree
@@ -21,8 +20,9 @@ __license__ = 'GPLv3+'
 #   along with Basic PyQt5 Example.  If not, see
 #   <http://www.gnu.org/licenses/>.
 
-
+import ctypes
 import logging
+import os
 import pathlib
 import sys
 import tempfile
@@ -64,21 +64,28 @@ def excepthook(excType=None, excValue=None, tracebackobj=None):
         tb=tracebackobj,
     )).strip())
 
+
 sys.excepthook = excepthook
 logger.critical('Logging sys.excepthook installed')
 logger.critical('Import in progress for {}'.format(pathlib.Path(__file__).resolve()))
 logger.critical('sys.argv: {}'.format(sys.argv))
 
-from PyQt5.QtWidgets import QApplication
-from ui.mainWindow import MainWindow
-
 
 def main():
+    from PyQt5.QtWidgets import QApplication
+    from ui.mainWindow import MainWindow
+
     app = QApplication(sys.argv)
+    if os.name == 'nt':
+        # для иконки в панели задач Windows
+        myappid = 'pyqompare.v0-a'
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
     main_window = MainWindow()
     main_window.show()
     app.exec()
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main())

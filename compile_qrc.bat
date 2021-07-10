@@ -1,0 +1,1 @@
+pyrcc5 -o resources.py ui/resources.qrc
