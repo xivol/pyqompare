@@ -41,9 +41,12 @@ class MainWindow(_UiBase):
 
     def __compare(self):
         if self.ui.widget_left.isLoaded() and self.ui.widget_right.isLoaded():
+            self.ui.statusbar.showMessage('Думаю....')
             if self.ui.widget_left.data != self.ui.widget_right.data:
                 self.ui.widget_left.setPlagiarized(False)
                 self.ui.widget_right.setPlagiarized(False)
+                self.ui.statusbar.showMessage('Вроде бы не плагиат!')
             else:
                 self.ui.widget_left.setPlagiarized(True)
                 self.ui.widget_right.setPlagiarized(True)
+                self.ui.statusbar.showMessage('Плагиат!')

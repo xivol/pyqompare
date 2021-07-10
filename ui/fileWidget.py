@@ -38,7 +38,7 @@ class FileWidget(_UiBase):
         self.__clear()
 
     def __openFileDialog(self):
-        fname = QFileDialog.getOpenFileName(self, 'Выбрать файл', '')[0]
+        fname = QFileDialog.getOpenFileName(self, 'Выбрать файл', '*.py')[0]
         if fname:
             self.__readData(fname)
             self.__updateCodeEdit()
@@ -46,17 +46,17 @@ class FileWidget(_UiBase):
     def __clear(self):
         self.rawData = []
         self.data = None
-        self.setPlagiarized(None)
         self.__updateCodeEdit()
 
     def __updateCodeEdit(self):
         self.ui.textEdit.setPlainText(''.join(self.rawData))
         self.ui.textEdit.setEnabled(len(self.rawData) > 0)
+        self.setPlagiarized(None)
 
     def __readData(self, filename):
         file = open(filename, 'r')
         self.rawData = file.readlines()
-        # file.close()
+        file.close()
         # with open('xast/weights.json') as json_file:
         #     weights = json.load(json_file)
         # self.data = TreeBuilder.build(self.rawData, weights)
