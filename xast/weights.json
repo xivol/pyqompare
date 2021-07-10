@@ -1,0 +1,27 @@
+{
+  "sum_subtree_div_by_overall_sum_threshold": 0.1,
+  "subtrees_are_equal_threshold": 0.25,
+  "subtree_same_node_type": 1,
+  "subtree_different_node_type": 0,
+
+  "child_node_Call": 1,
+  "child_node_Assign": 1,
+  "child_node_Expr": 1,
+  "child_node_Attribute": 1,
+  "child_node_keyword": 1,
+  "child_node_Constant": 1,
+  "child_node_For": 1,
+  "child_node_Module": 1,
+
+  "name_same_id_same_ctx": 1,
+  "name_same_id_different_ctx": 0,
+  "name_different_id_same_ctx": 0.1,
+  "name_different_id_different_ctx": 0,
+
+  "list_item": 1,
+  "list_same_len": 1,
+  "list_different_len": 0,
+
+  "values_are_equal": 1,
+  "values_are_not_equal": 0
+}

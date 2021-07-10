@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons8-delete-100.png</file>
+    <file>icons8-folder-100.png</file>
+  </qresource>
+</RCC>

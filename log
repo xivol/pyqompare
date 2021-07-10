@@ -1,0 +1,9 @@
+Logging sys.excepthook installed
+Import in progress for C:\Users\iloshkaryov\PycharmProjects\pyqompare\__main__.py
+sys.argv: ['C:\\Users\\iloshkaryov\\PycharmProjects\\pyqompare\\__main__.py']
+Traceback (most recent call last):
+  File "C:\Users\iloshkaryov\PycharmProjects\pyqompare\ui\fileWidget.py", line 40, in __openFileDialog
+    self.__readData(fname)
+  File "C:\Users\iloshkaryov\PycharmProjects\pyqompare\ui\fileWidget.py", line 53, in __readData
+    file = open(filename, 'r')
+FileNotFoundError: [Errno 2] No such file or directory: ''
